@@ -1,4 +1,4 @@
-var ini = require('../lib/nolifer-ini.js');
+var ini = require('../lib/multilevel-ini.js');
 
 /**
  * Only for test
@@ -16,6 +16,7 @@ function assert(patern, value, line) {
 };
 
 ini.get('test.ini', function(error, ini) {
+        console.log('ini to obj:');
         if (error) {
             console.log('error', error);
         }
@@ -41,3 +42,28 @@ ini.get('test.ini', function(error, ini) {
             assert('True', ini['Second']['very']['long']['ini']['element']['and']['simple']['data'], '[Second] very.long.ini.element.and.simple.data');
         }
 });
+console.log('obj to ini:');
+console.log(ini.objToIni({
+      'First': {
+          'foo': {
+              'bar': 'example string',
+              'foo': 1024,
+              'far': {
+                  'foo': [1,2,3,4,5,7,8,9]
+              }
+          },
+          'bar': 'Foo \' other ; \\\\\"'
+      },
+      'Second : First': {
+          'foo': {
+              'one': ['1', 2, '\"', "'"]
+          },
+          'bar': '/foo/bar/foo/bar',
+          'far': 'z:\some\windows\path',
+          'bor': {
+              1: '11',
+              2: '22',
+              3: '33'
+          }
+      }
+}, true));
