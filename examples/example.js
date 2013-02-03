@@ -1,5 +1,8 @@
 var ini = require('../lib/nolifer-ini.js');
 
+/**
+ * Only for test
+ */
 function assert(patern, value, line) {
     if (patern !== value) {
         console.log('[Fail] Excepted in ' + (''+line) + ': (' + 
