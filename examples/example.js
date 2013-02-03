@@ -42,8 +42,8 @@ ini.get('test.ini', function(error, ini) {
             assert('True', ini['Second']['very']['long']['ini']['element']['and']['simple']['data'], '[Second] very.long.ini.element.and.simple.data');
         }
 });
-console.log('obj to ini:');
-console.log(ini.objToIni({
+
+var exObj = {
       'First': {
           'foo': {
               'bar': 'example string',
@@ -66,4 +66,7 @@ console.log(ini.objToIni({
               3: '33'
           }
       }
-}, true));
+};
+
+console.log('obj to ini:');
+console.log(ini.objToIni(exObj, true));

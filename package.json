@@ -1,0 +1,18 @@
+{
+    "author": {
+        "name": "Kamil Harasimowicz",
+        "email": "mifczu@gmail.com"
+    },
+    "name": "multilevel-ini",
+    "description": "Multi level ini parser. Compatible with Zend ini file",
+    "keywords": ["ini", "multilevel", "read ini", "write ini", "parse ini", "extended ini files", "zend ini compatible"],
+    "version": "1.0.1",
+    "engines": {
+        "node": "*"
+    },
+    "repository" : {
+        "type" : "git",
+        "url" : "git://github.com/HarasimowiczKamil/node-multilevel-ini.git"
+    },
+    "main": "./lib/multilevel-ini"
+}
