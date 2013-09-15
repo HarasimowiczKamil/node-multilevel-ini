@@ -6,7 +6,7 @@
     "name": "multilevel-ini",
     "description": "Multi level ini parser. Compatible with Zend ini file",
     "keywords": ["ini", "multilevel", "read ini", "write ini", "parse ini", "extended ini files", "zend ini compatible"],
-    "version": "1.0.2",
+    "version": "1.1.0",
     "engines": {
         "node": "*"
     },

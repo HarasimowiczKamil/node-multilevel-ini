@@ -14,7 +14,19 @@ or in package.json
 ...
 ```
 
-## Usage ##
+## API ##
+
+```
+var ini = require('multilevel-ini');
+ini.get(filePath, callback);
+ini.getSync(filePath);
+ini.set(data, filePath, callback);
+ini.setSync(data, filePath);
+ini.objToIni(chunk, firstElementIsTitle, prefix);
+ini.iniToObj(str);
+```
+
+## Example ##
 
 ```js
 var ini = require('multilevel-ini');
