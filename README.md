@@ -1,5 +1,7 @@
 # README #
 
+[![NPM](https://nodei.co/npm/multilevel-ini.png?downloads=true&stars=true)](https://nodei.co/npm/multilevel-ini/)
+
 ## Installation ##
 
 ```
