@@ -5,8 +5,8 @@ var ini = require('../lib/multilevel-ini.js');
  */
 function assert(patern, value, line) {
     if (patern !== value) {
-        console.log('[Fail] Excepted in ' + (''+line) + ': (' + 
-            (''+typeof(patern)) + ')"' + (''+patern) + '"' + 
+        console.log('[Fail] Excepted in ' + (''+line) + ': (' +
+            (''+typeof(patern)) + ')"' + (''+patern) + '"' +
             ' given (' + (''+typeof(value)) + ')"' + (''+value) + '"\n');
         return false;
     } else {
@@ -30,7 +30,9 @@ ini.get('test.ini', function(error, ini) {
             assert('other text', ini['First']['foo']['foo'][3], '[First] foo.foo.3');
             assert('text" and other ; text', ini['First']['bar'], '[First] bar');
             assert('text\\\\" and other ; text', ini['First']['far'], '[First] far');
-            
+            assert('', ini['First']['empty'], '[First] empty');
+            assert('', ini['First']['nothing'], '[First] nothing');
+
             assert('1', ini['Second']['foo']['bar'], '[Second] foo.bar');
             assert('', ini['Second']['foo']['bar2'], '[Second] foo.bar2');
             assert('any text', ini['Second']['foo']['bar3'], '[Second] foo.bar3');
@@ -52,7 +54,8 @@ var exObj = {
                   'foo': [1,2,3,4,5,7,8,9]
               }
           },
-          'bar': 'Foo \' other ; \\\\\"'
+          'bar': 'Foo \' other ; \\\\\"',
+          'empty': ''
       },
       'Second : First': {
           'foo': {
